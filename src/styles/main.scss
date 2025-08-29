@@ -36,7 +36,7 @@ html {
   }
 
   @each $day, $offset in $days {
-    &--#{$day} {
+    &--start-day-#{$day} {
       .calendar__day:first-child {
         margin-left: $offset + px;
       }
@@ -62,7 +62,7 @@ html {
   }
 
   @for $len from 28 through 30 {
-    &--#{$len} {
+    &--month-length-#{$len} {
       @for $i from ($len + 1) through 31 {
         .calendar__day:nth-child(#{$i}) {
           display: none;
@@ -75,5 +75,6 @@ html {
     transition-duration: 0.5s;
     transform: translateY(-20px);
     background-color: #ffbfcb;
+    cursor: pointer;
   }
 }
