@@ -5,34 +5,36 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html,body {
+  height: 100%;
+}
+
 .calendar {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   max-width: 707px;
-  gap: 1px;
+  gap: $gap;
 
   &__day {
     position: relative;
     box-sizing: border-box;
-    border: 1px solid black;
-    width: 100px;
-    height: 100px;
-    color: #eee;
+    border: 1px solid $color;
+    width: $width;
+    height: $height;
+    background-color: #eee;
     display: none;
-    transition-duration: 0.5s;
-  }
-
-  &__day:first-child {
-    margin-left: 606px;
+    transition: background-color 0.5s, transform 0.5s;
   }
 
   &__day::before {
     position: absolute;
-    top: 38;
-    left: 35;
-    color: black;
-    font-weight: 500;
-    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
   }
 
   @each $day, $offset in $days {
